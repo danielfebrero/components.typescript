@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Map, { MarkersType } from './components/map';
+const App = () => {
 
-function App() {
+  const markers: Array<MarkersType> = [
+    {
+      position: [51.505, -0.09],
+      popup: {
+        content: 'First marker'
+      }
+    },
+    {
+      position: [51.500, -0.09],
+      popup: {
+        content: 'Second marker'
+      }
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Map 
+          markers={markers} 
+          scrollWheelZoom={true}
+          zoom={13}
+        />
+      </>
   );
 }
 

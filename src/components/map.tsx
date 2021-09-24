@@ -13,11 +13,12 @@ interface Props {
   markers?: Array<MarkersType>;
   scrollWheelZoom: boolean;
   zoom: number;
+  center: [number, number];
 }
 
 const Map: React.FC<Props> = (props) => {
 	return (
-	<MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={props.scrollWheelZoom} id="mapid">
+	<MapContainer center={props.center} zoom={props.zoom} scrollWheelZoom={props.scrollWheelZoom} id="mapid">
 		<TileLayer
 		  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

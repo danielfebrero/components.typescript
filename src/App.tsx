@@ -18,13 +18,14 @@ const App = () => {
   ]
 
   return (
-      <>
+      <div id="main">
         <Map 
           markers={markers} 
           scrollWheelZoom={true}
           zoom={13}
+          center={[51.505, -0.09]}
         />
-      </>
+      </div>
   );
 }
 

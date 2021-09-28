@@ -1,5 +1,5 @@
 import './App.css';
-import Map, { MarkersType } from './components/map';
+import Map, { MarkersType } from './components/Map';
 const App = () => {
 
   const markers: Array<MarkersType> = [

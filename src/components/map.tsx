@@ -10,7 +10,7 @@ export interface MarkersType {
 }
 
 interface Props {
-  markers?: Array<MarkersType>;
+  markers?: MarkersType[];
   scrollWheelZoom: boolean;
   zoom: number;
   center: [number, number];

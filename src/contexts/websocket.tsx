@@ -36,7 +36,7 @@ export default ({ children }) => {
     });
 
     return (
-        <WebSocketContext.Provider value={[connection, connecting]}>
+        <WebSocketContext.Provider value={{connection, connecting}}>
             {children}
         </WebSocketContext.Provider>
     )

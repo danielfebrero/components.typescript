@@ -1,9 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { HubConnectionBuilder, LogLevel, HubConnection } from '@microsoft/signalr';
 
-const WebSocketContext = createContext(null)
-
-export { WebSocketContext }
+const WebSocketContext = createContext(null);
+export const useConnection = () => useContext(WebSocketContext);
 
 export default ({ children }) => {
     const [connection, setConnection] = useState<HubConnection>();

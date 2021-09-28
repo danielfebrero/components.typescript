@@ -13,7 +13,7 @@ function useConnection() {
         setConnecting(true);
   
         const connection = new HubConnectionBuilder()
-          .withUrl("https://localhost:44333/chat")
+          .withUrl("https://localhost:44333/atms")
           .configureLogging(LogLevel.Information)
           .build();
   
@@ -23,6 +23,7 @@ function useConnection() {
   
         await connection.start();
         setConnection(connection);
+        setConnecting(false);
       } catch (e) {
         console.log(e);
       }

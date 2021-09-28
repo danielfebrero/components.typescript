@@ -18,8 +18,8 @@ function useConnection() {
           .build();
   
           connection.onclose(e => {
-          setConnection(null);
-        });
+            setConnection(null);
+          });
   
         await connection.start();
         setConnection(connection);
@@ -29,7 +29,7 @@ function useConnection() {
       }
     }
 
-    connect();
+    !connection && connect();
   });
 
   return [connection, connecting];
